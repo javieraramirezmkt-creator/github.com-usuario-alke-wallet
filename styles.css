@@ -1,0 +1,51 @@
+/* Paleta de colores basada en la imagen */
+:root {
+    --primary-purple: #7e57c2;
+    --dark-purple: #512da8;
+    --light-bg: #f8f9fe;
+    --card-white: #ffffff;
+}
+
+body {
+    background-color: var(--light-bg);
+    font-family: 'Public Sans', sans-serif;
+}
+
+/* El header púrpura curvo */
+.header-purple {
+    background: var(--primary-purple);
+    color: white;
+    padding: 40px 20px 80px 20px;
+    border-radius: 0 0 40px 40px;
+}
+
+/* Tarjeta flotante de acciones (Top up, Transfer, etc.) */
+.action-box {
+    background: white;
+    border-radius: 20px;
+    margin-top: -50px; /* Hace que flote sobre el fondo púrpura */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+
+/* Iconos circulares de servicios */
+.service-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+/* Botón "Done" o principal */
+.btn-primary-custom {
+    background-color: var(--primary-purple);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+}
