@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet - Transacciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <style>
+        :root { --purple-main: #6f42c1; }
+        /* Mezcla del estilo Login y Menú */
+        body { 
+            background: linear-gradient(180deg, #6f42c1 0%, #f8f9fa 300px); 
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            padding-bottom: 80px;
+        }
+        .header-trans { color: white; padding: 30px 20px; }
+        .back-btn { color: white; font-size: 1.5rem; text-decoration: none; }
+        
+        /* Estilo de la lista de transacciones */
+        .transaction-card {
+            background: white;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 12px;
+            transition: transform 0.2s;
+        }
+        .transaction-card:active { transform: scale(0.98); }
+        
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .bg-receive { background-color: #e8f5e9; color: #2e7d32; }
+        .bg-send { background-color: #ffebee; color: #c62828; }
+        
+        .nav-bottom { position: fixed; bottom: 0; width: 100%; background: white; border-top: 1px solid #eee; padding: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="header-trans d-flex align-items-center">
+        <a href="menu.html" class="back-btn me-3"><i class="bi bi-chevron-left"></i></a>
+        <h4 class="mb-0 fw-bold">Últimos Movimientos</h4>
+    </div>
+
+    <div class="container">
+        <div class="d-flex gap-2 mb-4 overflow-x-auto pb-2">
+            <span class="badge rounded-pill bg-white text-dark p-2 px-3 shadow-sm border">Todos</span>
+            <span class="badge rounded-pill bg-white text-muted p-2 px-3 shadow-sm border">Ingresos</span>
+            <span class="badge rounded-pill bg-white text-muted p-2 px-3 shadow-sm border">Gastos</span>
+        </div>
+
+        <div id="transactionList">
+            
+            <div class="card transaction-card p-3">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-send me-3">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Juanito Perez</h6>
+                            <small class="text-muted">Hoy, 14:20</small>
+                        </div>
+                    </div>
