@@ -1,51 +1,66 @@
-/* Paleta de colores basada en la imagen */
+/* 1. Variables Globales - Personaliza tu Wallet aquí */
 :root {
-    --primary-purple: #7e57c2;
-    --dark-purple: #512da8;
-    --light-bg: #f8f9fe;
-    --card-white: #ffffff;
+    --purple-main: #6f42c1;
+    --purple-dark: #59359a;
+    --purple-light: #f3effb;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --success-color: #2e7d32;
+    --danger-color: #c62828;
+    --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* 2. Estilos Base */
 body {
-    background-color: var(--light-bg);
-    font-family: 'Public Sans', sans-serif;
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    min-height: 100vh;
 }
 
-/* El header púrpura curvo */
-.header-purple {
-    background: var(--primary-purple);
-    color: white;
-    padding: 40px 20px 80px 20px;
-    border-radius: 0 0 40px 40px;
+/* 3. Pantallas de Login (Con Gradiente) */
+.login-body {
+    background: linear-gradient(180deg, var(--purple-main) 0%, var(--white) 100%);
+    display: flex;
+    align-items: center;
 }
 
-/* Tarjeta flotante de acciones (Top up, Transfer, etc.) */
-.action-box {
-    background: white;
+/* 4. Componentes de Tarjetas (Cards) */
+.card-wallet {
+    background: var(--white);
     border-radius: 20px;
-    margin-top: -50px; /* Hace que flote sobre el fondo púrpura */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: none;
+    box-shadow: var(--shadow-md);
     padding: 20px;
 }
 
-/* Iconos circulares de servicios */
-.service-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-    font-size: 1.2rem;
+.action-card {
+    background: var(--white);
+    border-radius: 15px;
+    margin-top: -30px;
+    box-shadow: var(--shadow-sm);
+    padding: 15px;
 }
 
-/* Botón "Done" o principal */
-.btn-primary-custom {
-    background-color: var(--primary-purple);
+/* 5. Botones Personalizados */
+.btn-purple {
+    background-color: var(--purple-main);
+    color: var(--white);
+    border-radius: 12px;
     border: none;
-    border-radius: 15px;
-    padding: 15px;
-    color: white;
-    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
 }
+
+.btn-purple:hover {
+    background-color: var(--purple-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* 6. Header del Menú */
+.header-wallet {
+    background-color: var(--purple-main);
+    color: var(--white);
