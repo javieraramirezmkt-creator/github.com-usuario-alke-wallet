@@ -1,66 +1,156 @@
-/* 1. Variables Globales - Personaliza tu Wallet aquí */
+/* --- CONFIGURACIÓN GLOBAL --- */
 :root {
-    --purple-main: #6f42c1;
+    --purple-primary: #6f42c1;
     --purple-dark: #59359a;
-    --purple-light: #f3effb;
-    --bg-light: #f8f9fa;
+    --purple-light: rgba(111, 66, 193, 0.1);
+    --light-bg: #f8f9fa;
     --white: #ffffff;
-    --success-color: #2e7d32;
-    --danger-color: #c62828;
-    --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
-    --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* 2. Estilos Base */
 body {
-    background-color: var(--bg-light);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
+    background-color: var(--light-bg);
+    color: #333;
+}
+
+/* --- ESTILOS INDEX.HTML (Landing) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--purple-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-btn {
+    text-decoration: none;
+    background: var(--purple-primary);
+    color: var(--white);
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: var(--purple-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Este contenedor envolverá todo el contenido del index */
+.fondo {
+    /* Agregamos ../ para salir de la carpeta css y entrar a img */
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                url('../img/billetera.png') no-repeat center center/cover;
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
     min-height: 100vh;
 }
 
-/* 3. Pantallas de Login (Con Gradiente) */
-.login-body {
-    background: linear-gradient(180deg, var(--purple-main) 0%, var(--white) 100%);
-    display: flex;
+.hero {
+    padding: 80px 8%;
+    /* Quitamos el fondo sólido para que se vea la imagen de .fondo */
+    background: transparent; 
+    min-height: 80vh;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap: 50px;
 }
 
-/* 4. Componentes de Tarjetas (Cards) */
-.card-wallet {
-    background: var(--white);
-    border-radius: 20px;
-    border: none;
-    box-shadow: var(--shadow-md);
-    padding: 20px;
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
 }
 
-.action-card {
-    background: var(--white);
-    border-radius: 15px;
-    margin-top: -30px;
-    box-shadow: var(--shadow-sm);
-    padding: 15px;
+.app-buttons img {
+    height: 45px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* 5. Botones Personalizados */
-.btn-purple {
-    background-color: var(--purple-main);
+.app-buttons img:hover {
+    opacity: 0.8;
+}
+
+/* --- ESTILOS MENU.HTML (Dashboard) --- */
+.sidebar {
+    background-color: var(--purple-primary);
+    min-height: 100vh;
     color: var(--white);
-    border-radius: 12px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 12px 15px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+.balance-card {
+    background: linear-gradient(45deg, var(--purple-primary), #a927f9);
+    color: var(--white);
+    border-radius: 18px;
     border: none;
-    padding: 10px 20px;
-    transition: all 0.3s ease;
+}
+
+.btn-purple {
+    background-color: var(--purple-primary);
+    color: var(--white);
+    border: none;
+    transition: 0.3s;
 }
 
 .btn-purple:hover {
     background-color: var(--purple-dark);
     color: var(--white);
-    transform: translateY(-2px);
+    transform: scale(1.02);
 }
 
-/* 6. Header del Menú */
-.header-wallet {
-    background-color: var(--purple-main);
-    color: var(--white);
+/* Estilo para la lista desplegable (Select) */
+.form-select {
+    border-radius: 10px;
+}
+
+/* --- ESTILOS GENERALES --- */
+.fondo{
+    background: url(/img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    letter-spacing: 20px;
+}
+
+h1.header-space{
+    letter-spacing: 75px;
+}
+
+.pb-6{
+    padding-bottom: 170px;
+}
